@@ -1,41 +1,44 @@
-#include <iostream> 
-
-using namespace std;
-
+#ifndef BOOL_INCLUDE
+#define BOOL_INCLUDE
 class Bool{
     private:
-        bool val;
+        bool state;
     public:
         //Constructor
-        Bool(){}
+        //Initially the bit is set off
+        Bool(){
+            this->setBit(0);
+        }
 
         //setter
-        void setBit(int val){
-            this->val = val;
+        void setBit(int state){
+            this->state = state;
         }
+
         //getter
         bool getBit(){
-            return this->val;
+            return this->state;
         }
 
         //Operator overloaders
         Bool operator+(Bool const &obj) const{
             Bool res;
-            res.val = (val | (obj.val));
+            res.state = (state | (obj.state));
             return res;
         }
         Bool operator&(Bool const &obj) const{
             Bool res;
-            res.val = (val & (obj.val));
+            res.state = (state & (obj.state));
             return res;
         }
         Bool operator^(Bool const &obj) const{
             Bool res;
-            res.val = (val ^ (obj.val));
+            res.state = (state ^ (obj.state));
             return res;
         }        
         Bool operator~(){
-           val = !(val);
+           state = !(state);
            return *(this);
         }
 };
+#endif
