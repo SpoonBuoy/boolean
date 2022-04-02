@@ -5,8 +5,8 @@ A  C++ *Boolean Expressions* parser and evaluator, with variable count upto 15 (
 ## Functions/Commands supported (*as of now*) :
 |Command/Function|Example Input| Example Output|
 |----------------|-----|------|
-|**Truth Table Generator**| `>>> truth_table [Input Expression]` <br> `>>> truth_table ~(a+b)`|` a b Q` <br> `0 0 1` <br> `0 1 0` <br> `1 0 0` <br> `1 1 0` |
-|**Minterms**| `>>> min_terms [Input Expression]` <br> `>>> min_terms ~(a+b)`| `Minterms:` <br> `0`|
+|**Truth Table Generator**| `print_table` <br> `(~(a+b))` |`a   b   Q `<br>`0   0   1 ` <br>`0   1   0  `<br>`1   0   0  `<br>`1   1   0  `|
+|**Minterms**| `min_term` <br> `(~(a+b))`| `Min Terms :` <br> `0 0`|
 
 ## Operators supported (*as of now*)
 |Binary|Unary|
@@ -17,12 +17,11 @@ From Source : <br>
 ``` 
 git clone https://github.com/SpoonBuoy/boolean.git 
 cd boolean
-./solve
->>> [Command Input]
+make 
+./boolean
+[Command Input]
 ```
 ### TO DO:
 ___
 * K-Map Generator
 * Boolean Expression Simplifier
-
-
